@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quiz.Authorization", "Quiz.Authorization\Quiz.Authorization.csproj", "{3304AA45-2AAA-4837-A997-FD6B20044448}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quiz.Authorization", "Quiz.Authorization\Quiz.Authorization.csproj", "{3304AA45-2AAA-4837-A997-FD6B20044448}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quiz.Authorization.Bll", "Quiz.Authorization.Bll\Quiz.Authorization.Bll.csproj", "{422C4DDB-9C47-47C5-BD0F-22D3EA429902}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quiz.Authorization.Bll", "Quiz.Authorization.Bll\Quiz.Authorization.Bll.csproj", "{422C4DDB-9C47-47C5-BD0F-22D3EA429902}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quiz.Authorization.Dal", "Quiz.Authorization.Dal\Quiz.Authorization.Dal.csproj", "{B3E6EEF1-9456-4B15-992E-D18BE9A88C8D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quiz.Authorization.Dal", "Quiz.Authorization.Dal\Quiz.Authorization.Dal.csproj", "{B3E6EEF1-9456-4B15-992E-D18BE9A88C8D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quiz.Authorization.Utilities", "Quiz.Authorization.Utilities\Quiz.Authorization.Utilities.csproj", "{6F81118B-44D8-4871-8AA1-FA2DF4C6DEAD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quiz.Authorization.Utilities", "Quiz.Authorization.Utilities\Quiz.Authorization.Utilities.csproj", "{6F81118B-44D8-4871-8AA1-FA2DF4C6DEAD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,20 +17,20 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3304AA45-2AAA-4837-A997-FD6B20044448}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3304AA45-2AAA-4837-A997-FD6B20044448}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3304AA45-2AAA-4837-A997-FD6B20044448}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{3304AA45-2AAA-4837-A997-FD6B20044448}.Debug|Any CPU.Build.0 = Release|Any CPU
 		{3304AA45-2AAA-4837-A997-FD6B20044448}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3304AA45-2AAA-4837-A997-FD6B20044448}.Release|Any CPU.Build.0 = Release|Any CPU
-		{422C4DDB-9C47-47C5-BD0F-22D3EA429902}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{422C4DDB-9C47-47C5-BD0F-22D3EA429902}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{422C4DDB-9C47-47C5-BD0F-22D3EA429902}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{422C4DDB-9C47-47C5-BD0F-22D3EA429902}.Debug|Any CPU.Build.0 = Release|Any CPU
 		{422C4DDB-9C47-47C5-BD0F-22D3EA429902}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{422C4DDB-9C47-47C5-BD0F-22D3EA429902}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B3E6EEF1-9456-4B15-992E-D18BE9A88C8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B3E6EEF1-9456-4B15-992E-D18BE9A88C8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3E6EEF1-9456-4B15-992E-D18BE9A88C8D}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{B3E6EEF1-9456-4B15-992E-D18BE9A88C8D}.Debug|Any CPU.Build.0 = Release|Any CPU
 		{B3E6EEF1-9456-4B15-992E-D18BE9A88C8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3E6EEF1-9456-4B15-992E-D18BE9A88C8D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6F81118B-44D8-4871-8AA1-FA2DF4C6DEAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6F81118B-44D8-4871-8AA1-FA2DF4C6DEAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F81118B-44D8-4871-8AA1-FA2DF4C6DEAD}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{6F81118B-44D8-4871-8AA1-FA2DF4C6DEAD}.Debug|Any CPU.Build.0 = Release|Any CPU
 		{6F81118B-44D8-4871-8AA1-FA2DF4C6DEAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F81118B-44D8-4871-8AA1-FA2DF4C6DEAD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection

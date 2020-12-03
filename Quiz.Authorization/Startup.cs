@@ -36,10 +36,11 @@ namespace Quiz.Authorization
             services.AddTransient<JwtService>();
 
             services.AddTransient<RegisterService>();
+            string datebaseconnectionstring = Environment.GetEnvironmentVariable("datebaseconnectionstring");
 
             services.AddTransient(x =>
             {
-                return new MainContext("Host=95.214.9.14;Database=postgres;Username=postgres;Password=123456rtyu");
+                return new MainContext(datebaseconnectionstring);
             });
 
             services.AddTransient<LoginService>();
