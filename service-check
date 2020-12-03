@@ -6,10 +6,11 @@ if [[ $exist == "" ]]
 then
  echo "not exist ${serv}"
  echo "downloading"
- wget "https://raw.githubusercontent.com/OneZeroZeroOneOne/SocialNetwork/master/Services/${serv}" -P "/etc/systemd/system"
+ wget "https://raw.githubusercontent.com/OneZeroZeroOneOne/Quiz.Authorization/main/Services/${serv}" -P "/etc/systemd/system"
  echo "downloaded"
  systemctl enable $serv
  echo "restarting"
+ systemctl daemon-reload
  systemctl restart $serv
  echo "restarted"
 else
