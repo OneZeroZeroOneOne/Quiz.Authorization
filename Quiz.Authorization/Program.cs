@@ -21,6 +21,7 @@ namespace Quiz.Authorization
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+                    webBuilder.UseUrls("http://*:8000");
                 });
     }
 }
