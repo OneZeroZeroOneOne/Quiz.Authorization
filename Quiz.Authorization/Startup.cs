@@ -36,11 +36,11 @@ namespace Quiz.Authorization
             services.AddTransient<JwtService>();
 
             services.AddTransient<RegisterService>();
-            string datebaseconnectionstring = Environment.GetEnvironmentVariable("datebaseconnectionstring");
+            string databaseconnectionstring = Environment.GetEnvironmentVariable("databaseconnectionstring");
 
             services.AddTransient(x =>
             {
-                return new MainContext(datebaseconnectionstring);
+                return new MainContext(databaseconnectionstring);
             });
 
             services.AddTransient<LoginService>();
