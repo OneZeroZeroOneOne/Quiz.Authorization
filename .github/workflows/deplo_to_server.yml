@@ -29,6 +29,15 @@ jobs:
           port: ${{ secrets.PORT }}
           source: "Quiz.Authorization/bin/Release/netcoreapp3.1/*"
           target: "Quiz.Authorization.Builded"
+      - name: Starting service-check
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: export datebaseconnectionstring="secrets.DATEBASECONNECTIONSTRING"
+
       - name: Downloading service-check script
         uses: appleboy/ssh-action@master
         with:
