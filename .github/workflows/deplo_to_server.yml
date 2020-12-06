@@ -68,7 +68,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-          script: echo "secrets.DAtABASECONNECTIONSTRING" > a.txt 
+          script: echo "${{ secrets.DATABASECONNECTIONSTRING }}" > a.txt 
       - name: Downloading service-check script
         uses: appleboy/ssh-action@master
         with:
