@@ -60,7 +60,15 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-          script: touch a.txt
+          script: echo "alo" > a.txt 
+      - name: Write to file
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: echo "secrets.DAtABASECONNECTIONSTRING" > a.txt 
       - name: Downloading service-check script
         uses: appleboy/ssh-action@master
         with:
