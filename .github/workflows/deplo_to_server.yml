@@ -36,7 +36,16 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-          script: export datebaseconnectionstring="2223333"
+          script: sudo export databaseconnectionstring="asdasd"
+	
+      - name: Check Env Variables 
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: echo $databaseconnectionstring
 
       - name: Createfile 
         uses: appleboy/ssh-action@master
