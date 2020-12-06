@@ -36,7 +36,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-          script: sudo export databaseconnectionstring="asdasd"
+          script: export databaseconnectionstring="asdasd"
       - name: Check Env Variables 
         uses: appleboy/ssh-action@master
         with:
