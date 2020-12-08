@@ -1,9 +1,9 @@
 [Unit]
-Description=Quiz.Authorization app
+Description=Tests.Authorization app
 
 [Service]
-WorkingDirectory=/root/Quiz.Authorization.Builded/Quiz.Authorization/bin/Release/netcoreapp3.1
-ExecStart=/usr/bin/dotnet /root/Quiz.Authorization.Builded/Quiz.Authorization/bin/Release/netcoreapp3.1/Quiz.Authorization.dll
+WorkingDirectory=/root/Tests.Authorization.Builded/Tests.Authorization/bin/Release/netcoreapp3.1
+ExecStart=/usr/bin/dotnet /root/Tests.Authorization.Builded/Tests.Authorization/bin/Release/netcoreapp3.1/Tests.Authorization.dll
 Restart=always
 # Restart service after 10 seconds if the dotnet service crashes:
 RestartSec=10
