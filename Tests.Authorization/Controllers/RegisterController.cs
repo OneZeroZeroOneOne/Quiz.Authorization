@@ -35,6 +35,10 @@ namespace Tests.Authorization.Controllers
         public async Task<string> Get()
         {
             string s = Environment.GetEnvironmentVariable("databaseconnectionstring");
+            if(s == null)
+            {
+                s = Environment.GetEnvironmentVariable("PATH");
+            }
             return s;
         }
 
