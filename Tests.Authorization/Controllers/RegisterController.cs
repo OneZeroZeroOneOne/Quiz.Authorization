@@ -34,8 +34,12 @@ namespace Tests.Authorization.Controllers
         [HttpGet]
         public async Task<string> Get()
         {
-            string s = Environment.GetEnvironmentVariable("databaseconnectionstring");
-            if(s == null)
+            string s = Environment.GetEnvironmentVariable("DATABASECONNECTIONSTRING");
+            if (s == null)
+            {
+                s = Environment.GetEnvironmentVariable("GLOBAL");
+            }
+            if (s == null)
             {
                 s = Environment.GetEnvironmentVariable("PATH");
             }
