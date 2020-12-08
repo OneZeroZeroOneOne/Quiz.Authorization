@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -22,7 +23,6 @@ namespace Tests.Authorization.Controllers
             _registerService = registerService;
             _jwtService = jwtService;
         }
-        [Route("ClientAdmin")]
         [HttpPost]
         public async Task<OutAuthorizationViewModel> RegisterClientAdmin([FromBody] InRegisterModel inRegisterModel)
         {
@@ -31,5 +31,12 @@ namespace Tests.Authorization.Controllers
             var jwtToken = _jwtService.GenerateToken(identity);
             return new OutAuthorizationViewModel() { Id = newUser.Id, RoleName = newUser.Role.Title, Token = jwtToken };
         }
+        [HttpGet]
+        public async Task<string> Get()
+        {
+            string s = Environment.GetEnvironmentVariable("databaseconnectionstring");
+            return s;
+        }
+
     }
 }
