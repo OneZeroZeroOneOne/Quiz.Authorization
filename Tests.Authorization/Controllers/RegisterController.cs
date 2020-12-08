@@ -39,10 +39,6 @@ namespace Tests.Authorization.Controllers
             {
                 s = Environment.GetEnvironmentVariable("GLOBAL");
             }
-            if (s == null)
-            {
-                s = Environment.GetEnvironmentVariable("PATH");
-            }
             return s;
         }
 
