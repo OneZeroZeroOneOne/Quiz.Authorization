@@ -12,7 +12,7 @@ using Tests.Authorization.Dal.Models.Out;
 
 namespace Tests.Authorization.Controllers
 {
-    [Route("authorization/[controller]")]
+    [Route("api/authorization/[controller]")]
     [ApiController]
     public class RegisterController : ControllerBase
     {
