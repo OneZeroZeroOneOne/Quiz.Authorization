@@ -33,7 +33,7 @@ namespace Tests.Authorization
             services.AddTransient<JwtService>();
 
             services.AddTransient<RegisterService>();
-            services.AddTransient(x => new MainContext(Environment.GetEnvironmentVariable("databaseconnectionstring")));
+            services.AddTransient(x => new MainContext(Environment.GetEnvironmentVariable("DATABASECONNECTIONSTRING")));
 
             services.AddTransient<LoginService>();
             services.AddSwaggerGen(c =>
