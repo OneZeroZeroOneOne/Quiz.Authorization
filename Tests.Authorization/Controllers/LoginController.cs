@@ -10,7 +10,7 @@ using Tests.Authorization.Dal.Models;
 
 namespace Tests.Authorization.Controllers
 {
-    [Route("api/authorization/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class LoginController : ControllerBase
     {

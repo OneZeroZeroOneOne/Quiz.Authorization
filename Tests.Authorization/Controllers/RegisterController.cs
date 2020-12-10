@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Policy;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 using Tests.Authorization.Bll.Services;
 using Tests.Authorization.Dal.Models;
 using Tests.Authorization.Dal.Models.In;
@@ -12,7 +8,7 @@ using Tests.Authorization.Dal.Models.Out;
 
 namespace Tests.Authorization.Controllers
 {
-    [Route("api/authorization/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class RegisterController : ControllerBase
     {
