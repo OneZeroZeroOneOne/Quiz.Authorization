@@ -88,14 +88,14 @@ namespace Tests.Authorization
                 app.UseDeveloperExceptionPage();
             }
 
+            app.ConfigureCustomExceptionMiddleware();
+
+            //app.UseHttpsRedirection();
+
             app.UseCors(x => x.AllowAnyOrigin());
             app.UseCors(x => x.AllowAnyHeader());
 
-            app.ConfigureCustomExceptionMiddleware();
-
             app.UseStaticFiles();
-
-            //app.UseHttpsRedirection();
 
             app.UseRouting();
 
