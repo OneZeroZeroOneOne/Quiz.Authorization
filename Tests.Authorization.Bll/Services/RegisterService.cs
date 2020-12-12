@@ -11,7 +11,7 @@ namespace Tests.Authorization.Bll.Services
     public class RegisterService
     {
         private MainContext _context;
-        public RegisterService(MainContext maincontext, JwtService jwtService)
+        public RegisterService(MainContext maincontext)
         {
             _context = maincontext;
         }

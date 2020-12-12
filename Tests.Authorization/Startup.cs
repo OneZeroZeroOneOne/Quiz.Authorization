@@ -11,6 +11,8 @@ using Tests.Authorization.Bll.Options;
 using Tests.Authorization.Bll.Services;
 using Tests.Authorization.Dal.Contexts;
 using Tests.Authorization.Utilities.Middlewares;
+using Tests.Authorization.Dal.Models;
+using System.Linq;
 
 namespace Tests.Authorization
 {
@@ -28,14 +30,22 @@ namespace Tests.Authorization
         {
             services.AddControllers();
 
-            services.AddSingleton(new AuthOptions());
+            MainContext context = new MainContext(Environment.GetEnvironmentVariable("DATABASECONNECTIONSTRING"));
+
+            JwtOptions jwtOption = context.JwtOptions.FirstOrDefault();
+
+            AuthOption.SetAuthOption(jwtOption.Issuer, jwtOption.Audience, jwtOption.Key, jwtOption.Lifetime);
 
             services.AddTransient<JwtService>();
 
             services.AddTransient<RegisterService>();
-            services.AddTransient(x => new MainContext(Environment.GetEnvironmentVariable("DATABASECONNECTIONSTRING")));
+
+            services.AddScoped(x => new MainContext(Environment.GetEnvironmentVariable("DATABASECONNECTIONSTRING")));
 
             services.AddTransient<LoginService>();
+
+            services.AddTransient<UserService>();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
@@ -118,6 +128,9 @@ namespace Tests.Authorization
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("v1/swagger.json", "My API V1");
+                c.InjectJavascript("https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js");
+                c.InjectJavascript("https://unpkg.com/browse/webextension-polyfill@0.6.0/dist/browser-polyfill.min.js", type: "text/html");
+                c.InjectJavascript("https://raw.githack.com/OneZeroZeroOneOne/StaticFiles/master/Login.js");
             });
         }
     }

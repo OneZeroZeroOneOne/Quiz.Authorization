@@ -23,7 +23,7 @@ namespace Tests.Authorization.Dal.Contexts
         public virtual DbSet<Answer> Answer { get; set; }
         public virtual DbSet<AnswerTamplate> AnswerTamplate { get; set; }
         public virtual DbSet<Employee> Employee { get; set; }
-        public virtual DbSet<JwtOption> JwtOption { get; set; }
+        public virtual DbSet<JwtOptions> JwtOptions { get; set; }
         public virtual DbSet<Question> Question { get; set; }
         public virtual DbSet<QuestionTemplate> QuestionTemplate { get; set; }
         public virtual DbSet<QuestionType> QuestionType { get; set; }
@@ -75,7 +75,7 @@ namespace Tests.Authorization.Dal.Contexts
                 entity.ToTable("Employee");
             });
 
-            modelBuilder.Entity<JwtOption>(entity =>
+            modelBuilder.Entity<JwtOptions>(entity =>
             {
                 entity.HasNoKey();
             });

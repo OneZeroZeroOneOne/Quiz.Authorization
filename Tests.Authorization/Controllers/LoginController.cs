@@ -7,6 +7,12 @@ using Microsoft.AspNetCore.Mvc;
 using Tests.Authorization.Dal.Models.Out;
 using Tests.Authorization.Bll.Services;
 using Tests.Authorization.Dal.Models;
+using System.Net;
+using Microsoft.Extensions.Primitives;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
+using Tests.Authorization.Bll.Options;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 
 namespace Tests.Authorization.Controllers
 {
@@ -29,5 +35,7 @@ namespace Tests.Authorization.Controllers
             var jwtToken = _jwtService.GenerateToken(identity);
             return new OutAuthorizationViewModel() { Id = user.Id, RoleName = user.Role.Title, Token = jwtToken };
         }
+        
+
     }
 }

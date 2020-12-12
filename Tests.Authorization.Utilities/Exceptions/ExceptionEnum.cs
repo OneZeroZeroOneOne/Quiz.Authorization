@@ -7,5 +7,7 @@ namespace Tests.Authorization.Utilities.Exceptions
     public enum ExceptionEnum
     {
         InvalidCredentials = 1,
+        SecurityKeyIsNull = 2,
+        AuthorizationHeaderNotExist = 3,
     }
 }

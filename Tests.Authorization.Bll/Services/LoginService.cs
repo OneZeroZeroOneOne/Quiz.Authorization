@@ -13,7 +13,7 @@ namespace Tests.Authorization.Bll.Services
     public class LoginService
     {
         private MainContext _context;
-        public LoginService(MainContext maincontext)
+        public LoginService(MainContext maincontext, JwtService jwtService)
         {
             _context = maincontext;
         }

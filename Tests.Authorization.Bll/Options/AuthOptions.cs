@@ -5,14 +5,22 @@ using System.Text;
 
 namespace Tests.Authorization.Bll.Options
 {
-    public class AuthOptions
+    public static class AuthOption
     {
-        public string ISSUER = "iliapestov"; // издатель токена
-        public string AUDIENCE = "iliapestov"; // потребитель токена
-        public string KEY = "mysupersecret_secretkey!321";   // ключ для шифрации
-        public int LIFETIME = 3600; // время жизни токена - 1 час
+        public static string ISSUER; // издатель токена
+        public static string AUDIENCE; // потребитель токена
+        public static string KEY;   // ключ для шифрации
+        public static int LIFETIME = 3600; // время жизни токена - 1 минута
 
-        public SymmetricSecurityKey GetSymmetricSecurityKey()
+        public static void SetAuthOption(string issuer, string audience, string key, int lifetime)
+        {
+            ISSUER = issuer;
+            AUDIENCE = audience;
+            KEY = key;
+            LIFETIME = lifetime;
+        }
+
+        public static SymmetricSecurityKey GetSymmetricSecurityKey()
         {
             return new SymmetricSecurityKey(Encoding.ASCII.GetBytes(KEY));
         }
