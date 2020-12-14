@@ -23,7 +23,7 @@ namespace Tests.Authorization.Controllers
         public async Task<OutAuthorizationViewModel> RegisterClientAdmin([FromBody] InRegisterModel inRegisterModel)
         {
             User newUser = await _registerService.RegisterClientAdmin(inRegisterModel.Login, inRegisterModel.Password, inRegisterModel.Email, inRegisterModel.Name);
-            var identity = _jwtService.GetUserIdentity(newUser.Id, newUser.Role.Title);
+            var identity = _jwtService.GetUserIdentity(newUser.Id, newUser.Role.Id);
             var jwtToken = _jwtService.GenerateToken(identity);
             return new OutAuthorizationViewModel() { Id = newUser.Id, RoleName = newUser.Role.Title, Token = jwtToken };
         }

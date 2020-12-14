@@ -31,7 +31,7 @@ namespace Tests.Authorization.Controllers
         public async Task<OutAuthorizationViewModel> Login([FromQuery] string login, [FromQuery] string password)
         {
             User user = await _loginService.Authorization(login, password);
-            var identity = _jwtService.GetUserIdentity(user.Id, user.Role.Title);
+            var identity = _jwtService.GetUserIdentity(user.Id, user.Role.Id);
             var jwtToken = _jwtService.GenerateToken(identity);
             return new OutAuthorizationViewModel() { Id = user.Id, RoleName = user.Role.Title, Token = jwtToken };
         }

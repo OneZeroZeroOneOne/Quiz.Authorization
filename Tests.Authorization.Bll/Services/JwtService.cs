@@ -18,12 +18,12 @@ namespace Tests.Authorization.Bll.Services
         {
         }
 
-        public ClaimsIdentity GetUserIdentity(int id, string roleName)
+        public ClaimsIdentity GetUserIdentity(int id, int roleId)
         {
             var claims = new List<Claim>
             {
                 new Claim(ClaimsIdentity.DefaultNameClaimType, id.ToString()),
-                new Claim(ClaimsIdentity.DefaultRoleClaimType, roleName),
+                new Claim(ClaimsIdentity.DefaultRoleClaimType, roleId.ToString()),
             };
             return new ClaimsIdentity(claims, "Token", ClaimsIdentity.DefaultNameClaimType, ClaimsIdentity.DefaultRoleClaimType);
         }
