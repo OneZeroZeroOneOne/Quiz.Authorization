@@ -15,8 +15,9 @@ namespace Tests.Authorization.Dal.Models
 
         public int Id { get; set; }
         public string Name { get; set; }
-        public int? RoleId { get; set; }
-        public DateTime? CreateDateTime { get; set; }
+        public int RoleId { get; set; }
+        public DateTime CreateDateTime { get; set; }
+        public string AvatarUrl { get; set; }
 
         public virtual Role Role { get; set; }
         public virtual UserSecurity UserSecurity { get; set; }

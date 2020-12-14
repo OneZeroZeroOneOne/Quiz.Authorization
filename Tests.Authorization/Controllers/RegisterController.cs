@@ -27,16 +27,5 @@ namespace Tests.Authorization.Controllers
             var jwtToken = _jwtService.GenerateToken(identity);
             return new OutAuthorizationViewModel() { Id = newUser.Id, RoleName = newUser.Role.Title, Token = jwtToken };
         }
-        [HttpGet]
-        public async Task<string> Get()
-        {
-            string s = Environment.GetEnvironmentVariable("DATABASECONNECTIONSTRING");
-            if (s == null)
-            {
-                s = Environment.GetEnvironmentVariable("GLOBAL");
-            }
-            return s;
-        }
-
     }
 }

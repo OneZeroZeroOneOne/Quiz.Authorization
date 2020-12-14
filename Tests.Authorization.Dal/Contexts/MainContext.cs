@@ -136,9 +136,12 @@ namespace Tests.Authorization.Dal.Contexts
             {
                 entity.ToTable("User");
 
+                entity.Property(e => e.Name).IsRequired();
+
                 entity.HasOne(d => d.Role)
                     .WithMany(p => p.Users)
                     .HasForeignKey(d => d.RoleId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("User_RoleId_fkey");
             });
 
@@ -210,6 +213,12 @@ namespace Tests.Authorization.Dal.Contexts
                 entity.ToTable("UserSecurity");
 
                 entity.Property(e => e.UserId).ValueGeneratedNever();
+
+                entity.Property(e => e.Email).IsRequired();
+
+                entity.Property(e => e.Login).IsRequired();
+
+                entity.Property(e => e.Password).IsRequired();
 
                 entity.HasOne(d => d.User)
                     .WithOne(p => p.UserSecurity)

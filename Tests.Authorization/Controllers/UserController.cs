@@ -41,7 +41,10 @@ namespace Tests.Authorization.Controllers
                 {
                     Id = user.Id,
                     Name = user.Name,
-                    RoleId = user.RoleId
+                    RoleId = user.RoleId,
+                    AvatarUrl = user.AvatarUrl,
+                    Email = user.UserSecurity.Email,
+                    RoleName = user.Role.Title,
                 };
             }
             throw ExceptionFactory.FriendlyException(ExceptionEnum.AuthorizationHeaderNotExist, "Authorization header not exist");
